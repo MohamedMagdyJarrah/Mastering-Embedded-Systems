@@ -1,4 +1,4 @@
-# ***Mastering Embedded Systrms***
+# ***Mastering Embedded Systems***
 
 ## ***Contents***
 ### **First Term**
