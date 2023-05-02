@@ -42,7 +42,7 @@ volatile R_ODR_t* R_ODR = (volatile R_ODR_t*)(GPIOA_BASE+0x0C);
 int main(void)
 {
 	uint32_t i=0;
-	RCC_APB2ENR |= (1<<3);		/*Setting bit to enable clock for pin*/
+	RCC_APB2ENR |= (1<<2);		/*Setting bit to enable clock for pin*/
 	GPIOA_CRH &= 0xff0fffff;	/*Masking Register*/
 	GPIOA_CRH |= 0x00200000;	/*Setting mode of the pin*/
 
@@ -55,12 +55,12 @@ int main(void)
 		GPIOA_ODR &= ~(1<<3);
 		for(i=0;i<5000;i++);
 
-		/*Turning led on*/
-		R_ODR->Pin.P_13 = 1;
-		for(i=0;i<5000;i++);
-		/*Turning led off*/
-		R_ODR->Pin.P_13 = 0;
-		for(i=0;i<5000;i++);
+//		/*Turning led on*/
+//		R_ODR->Pin.P_13 = 1;
+//		for(i=0;i<5000;i++);
+//		/*Turning led off*/
+//		R_ODR->Pin.P_13 = 0;
+//		for(i=0;i<5000;i++);
 
 	}
 	return 0;
