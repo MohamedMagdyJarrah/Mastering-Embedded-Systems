@@ -1,7 +1,7 @@
 # ***Mastering Embedded Systems***
 
+### [Progress Page](https://www.learn-in-depth.com/online-diploma/mohamedmagdygarrah@gmail.com)
 ![image](https://github.com/MohamedMagdyJarrah/Mastering-Embedded-Systems/assets/86077031/30dcdd5c-920e-4ec9-abc9-486aba19a52b)
-## [Progress Page](https://www.learn-in-depth.com/online-diploma/mohamedmagdygarrah@gmail.com)
 
 ## ***Contents***
 ### **First Term**
