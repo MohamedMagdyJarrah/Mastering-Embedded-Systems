@@ -13,6 +13,15 @@ void reverseString(char *str , int strLength)
 	}
 	temp[i] = '\0';
 	strcpy(str,temp);
+	
+	/* Better idea */
+//	int i;
+//	for(i=0 ; i<strLength/2; i++)
+//	{
+//		str[i] ^= str[strLength-i-1];
+//		str[strLength-i-1] ^= str[i];
+//		str[i] ^= str[strLength-i-1];
+//	}
 }
 
 int main(void)
