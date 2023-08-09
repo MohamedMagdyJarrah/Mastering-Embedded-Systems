@@ -14,11 +14,11 @@ void findFirstAndLastDigit(int num , int* firstDigit , int* lastDigit)
 
 int main()
 {
-	int num,firstdigit,seconddigit;
+	int num,firstdigit,lastDigit;
 	printf("enter num:");
 	fflush(stdout);
 	scanf("%d",&num);
-	findFirstAndLastDigit(num,&firstdigit,&seconddigit);
-	printf("The first digit in %d is %d and the last digit is %d",num,firstdigit,seconddigit);
+	findFirstAndLastDigit(num,&firstdigit,&lastDigit);
+	printf("The first digit in %d is %d and the last digit is %d",num,firstdigit,lastDigit);
 	return 0;
 }
