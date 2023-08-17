@@ -1,4 +1,4 @@
-.global reset
+.globl reset
 
 reset :
 	ldr sp, =stack_top 
