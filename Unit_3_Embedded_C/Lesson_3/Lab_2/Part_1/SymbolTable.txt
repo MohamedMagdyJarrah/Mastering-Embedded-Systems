@@ -1,0 +1,17 @@
+$ arm-none-eabi-nm.exe LAB2_Part2.elf
+20000004 B _E_bss
+20000004 D _E_Data
+08000134 T _E_text
+20000004 B _S_bss
+20000000 D _S_Data
+20001004 B _stack_top
+0800001c W Bus_Fault_Handler
+0800001c T Default_Handler
+0800001c W Hard_fault_Handler
+080000b4 T main
+0800001c W MM_Handler
+0800001c W NMI_Handler
+20000000 D R_ODR
+08000028 T Reset_Handler
+0800001c W Usage_Fault_Handler
+08000000 T vectors
