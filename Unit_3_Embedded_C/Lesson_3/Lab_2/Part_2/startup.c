@@ -45,7 +45,7 @@ uint32_t vectors[] __attribute__((section(".vectors")))	=		/* This attribute to 
 void Reset_Handler(void)
 {
 	/* Copy the .data from flash to sram */
-	unsigned int Data_Size = (unsigned int*)&_E_Data - (unsigned int*)&_S_Data;		/* Get the size of .data section by info of its end and start address 
+	unsigned int Data_Size = (unsigned char*)&_E_Data - (unsigned char*)&_S_Data;		/* Get the size of .data section by info of its end and start address 
 	(we put & before the _E_Data and _S_Data because they are symbols not variables and we want to take its addresses also cast them as ponters */
 	unsigned char *P_src = (unsigned char*)&_E_text;
 	unsigned char *P_dest = (unsigned char*)&_S_Data;
@@ -57,7 +57,7 @@ void Reset_Handler(void)
 	
 	
 	/* Reserve .bss in sram and init them by zeroes*/
-	unsigned int Bss_Size = (unsigned int)_E_bss - (unsigned int)_S_bss;	
+	unsigned int Bss_Size = (unsigned char)_E_bss - (unsigned char)_S_bss;	
 	P_dest = (unsigned char*)&_S_bss;
 	for(int i=0 ; i < Bss_Size ; i++)
 	{
