@@ -35,5 +35,6 @@ typedef double							float64;
 #define FALSE							((boolean)0)
 #endif
 
+#define NULL 							((void*)0)
 
 #endif
