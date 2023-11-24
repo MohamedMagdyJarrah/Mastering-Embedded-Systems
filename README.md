@@ -11,3 +11,4 @@
 - [Unit 4: System Architect](https://github.com/MohamedMagdyJarrah/Mastering-Embedded-Systems/tree/main/Unit_4_System_Architect)
 ### **Seconed Term**
 - [Unit 6: Microcontroller Architecture](https://github.com/MohamedMagdyJarrah/Mastering-Embedded-Systems/tree/main/Unit_6_MCU_Architecture)
+- [Unit 7: MCU Essential Peripherals](https://github.com/MohamedMagdyJarrah/Mastering-Embedded-Systems/tree/main/Unit_7_MCU_Essential_Peripherals)
