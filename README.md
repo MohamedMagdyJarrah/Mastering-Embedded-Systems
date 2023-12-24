@@ -1,6 +1,5 @@
 # ***Mastering Embedded Systems***
 
-###                                                             [Progress Page](https://www.learn-in-depth-store.com/account/blank-4)
 ![image](https://github.com/MohamedMagdyJarrah/Mastering-Embedded-Systems/assets/86077031/30dcdd5c-920e-4ec9-abc9-486aba19a52b)
 
 ## ***Contents***
