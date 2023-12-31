@@ -45,4 +45,8 @@ typedef double							float64;
 #define NULL_POINTER					2
 #define BUSY_FUNC						3
 
+/* CPU Frequency */
+#define F_CPU			8000000UL
+
+
 #endif

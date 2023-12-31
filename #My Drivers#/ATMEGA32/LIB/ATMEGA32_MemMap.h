@@ -160,4 +160,87 @@
 #define RECIEVE_CHAR			0
 #define BUFFER					1
 
+/*************************************************************************************************
+								   	   	SPI Registers
+**************************************************************************************************/
+#define SPDR				*((volatile uint8*)0x2F)		//SPI Data Register
+
+#define SPSR				*((volatile uint8*)0x2E)		//SPI Status Register
+#define SPSR_SPIF			7								//SPI interrupt flag
+#define SPSR_WCOL			6								//SPI write collision flag
+#define SPSR_SPI2X			0								//Prescaler bit 2
+
+
+#define SPCR			 	*((volatile uint8*)0x2D)		//SPI Control Register
+#define SPCR_SPIE			7								//SPI interrupt enable
+#define SPCR_SPE			6								//SPI enable
+#define SPCR_DORD			5								//SPI Data order
+#define SPCR_MSTR			4								//SPI MASTER/SLAVE select
+#define SPCR_CPOL			3								//SPI Clock polarity
+#define SPCR_CPHA			2								//SPI Clock phase
+#define SPCR_SPR1			1								//Prescaler bit 1
+#define SPCR_SPR0			0								//Prescaler bit 0
+/****************  SPI Macros ******************/
+#define F_OSC_DIV_4					0b000
+#define F_OSC_DIV_16				0b001
+#define F_OSC_DIV_64				0b010
+#define F_OSC_DIV_128				0b011
+#define F_OSC_DIV_2					0b100
+#define F_OSC_DIV_8					0b101
+#define F_OSC_DIV_32				0b110
+
+/*************************************************************************************************
+										TWI Registers
+**************************************************************************************************/
+#define TWDR			*((volatile uint8*)0x23)	//TWI Data Register
+
+#define TWAR			*((volatile uint8*)0x22)	//TWI (Slave) Address Register
+#define TWAR_TWA6		7						// Bits 7..1 – TWA: TWI (Slave) Address Register
+#define TWAR_TWA5		6
+#define TWAR_TWA4		5
+#define TWAR_TWA3		4
+#define TWAR_TWA2		3
+#define TWAR_TWA1		2
+#define TWAR_TWA0		1
+#define TWAR_TWGCE		0						// TWI General Call Recognition Enable Bit
+
+
+#define TWSR			*((volatile uint8*)0x21)	//TWI Status Register
+#define TWSR_TWS7		7						// Bits 7..3 – TWS: TWI Status
+#define TWSR_TWS6		6
+#define TWSR_TWS5		5
+#define TWSR_TWS4		4
+#define TWSR_TWS3		3
+#define TWSR_TWPS1		1						// TWI Prescaler Bit1
+#define TWSR_TWPS0		0						// TWI Prescaler Bit0
+
+#define TWBR			*((volatile uint8*)0x20)	//TWI Bit Rate Register
+
+#define TWCR			*((volatile uint8*)0x56)	//TWI Control Register
+#define TWCR_TWINT		7						// TWI Interrupt Flag
+#define TWCR_TWEA 		6						// TWI Enable Acknowledge Bit
+#define TWCR_TWSTA		5						// TWI START Condition Bit
+#define TWCR_TWSTO		4						// TWI STOP Condition Bit
+#define TWCR_TWWC		3						// TWI Write Collision Flag
+#define TWCR_TWEN		2						// TWI Enable Bit
+#define TWCR_TWIE		0						// TWI Interrupt Enable
+
+/****************  TWI Macros ******************/
+#define PRESCALER_1					0b00
+#define PRESCALER_4					0b01
+#define PRESCALER_16				0b10
+#define PRESCALER_64				0b11
+
+#define START_ACK                	0x08 /* start has been sent */
+#define REP_START_ACK           	0x10 /* repeated start */
+#define SLAVE_ADD_AND_WR_ACK    	0x18 /* Master transmit ( slave address + Write request ) ACK */
+#define SLAVE_ADD_AND_RD_ACK   	 	0x40 /* Master transmit ( slave address + Read request ) ACK */
+#define MSTR_WR_BYTE_ACK       	  	0x28 /* Master transmit data ACK */
+#define MSTR_RD_BYTE_WITH_ACK  	 	0x50 /* Master received data with ACK */
+#define MSTR_RD_BYTE_WITH_NACK   	0x58 /* Master received data with not ACK */
+#define SLAVE_ADD_RCVD_RD_REQ    	0xA8 /* means that slave address is received with read request */
+#define SLAVE_ADD_RCVD_WR_REQ    	0x60 /* means that slave address is received with write request */
+#define SLAVE_DATA_RECEIVED      	0x80 /* means that a byte is received */
+#define SLAVE_BYTE_TRANSMITTED   	0xB8 /* means that the written byte is transmitted */
+
 #endif /* ATMEGA32_MEM_MAP_H_ */

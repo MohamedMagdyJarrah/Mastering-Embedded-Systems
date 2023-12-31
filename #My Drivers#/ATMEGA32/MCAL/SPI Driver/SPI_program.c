@@ -10,7 +10,7 @@
 
 
 /*========================================================================================================
- * @Fun			:	SPI_MasterInit
+ * @Fun			:	MCAL_SPI_MasterInit
  * @Brief		:	Initialize the SPI Controller of the MCU to be Master
  * @RetVal		:	None
  *========================================================================================================*/
@@ -30,13 +30,12 @@ void MCAL_SPI_MasterInit(void)
 	SPCR |= ( (0b011 & SCK_FREQUENCEY) << 0 );		/* Masked the first two bits and put them in SPR0 & SPR1 */
 	SPSR |= ( ((0b100)>>2) << 0 );					/* Take the third bit and put in SPI2X */
 
-
 	/* Enable SPI */
 	SET_BIT(SPCR,SPCR_SPE);
 }
 
 /*========================================================================================================
- * @Fun			:	SPI_SlaveInit
+ * @Fun			:	MCAL_SPI_SlaveInit
  * @Brief		:	Initialize the SPI Controller of the MCU to be Slave
  * @RetVal		:	None
  *========================================================================================================*/
@@ -57,7 +56,7 @@ void MCAL_SPI_SlaveInit(void)
 }
 
 /*========================================================================================================
- * @Fun			:	SPI_Transcieve
+ * @Fun			:	MCAL_SPI_Transcieve
  * @Brief		:	Initialize the SPI Controller of the MCU to be Slave
  * @Param		:	Data: The data will be sent if we use this function in master code
  * 							otherwise it will the data in the shift register of the slave
