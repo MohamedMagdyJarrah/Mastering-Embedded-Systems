@@ -243,4 +243,109 @@
 #define SLAVE_DATA_RECEIVED      	0x80 /* means that a byte is received */
 #define SLAVE_BYTE_TRANSMITTED   	0xB8 /* means that the written byte is transmitted */
 
+/*************************************************************************************************
+										WDT Registers
+**************************************************************************************************/
+#define WDTCR				*((volatile uint8*)0x41)
+#define WDTCR_WDTOE			4
+#define WDTCR_WDE			3
+#define WDTCR_WDP2			2
+#define WDTCR_WDP1			1
+#define WDTCR_WDP0			0
+
+/*Watchdog timeout options at Vcc=5V*/
+#define WDT_TIMEOUT_16_3ms				0b000
+#define WDT_TIMEOUT_32_5ms				0b001
+#define WDT_TIMEOUT_65ms				0b010
+#define WDT_TIMEOUT_0_13s				0b011
+#define WDT_TIMEOUT_0_26s				0b100
+#define WDT_TIMEOUT_0_52s				0b101
+#define WDT_TIMEOUT_1s					0b110
+#define WDT_TIMEOUT_2_1s				0b111
+
+
+/*************************************************************************************************
+										Timers Registers
+**************************************************************************************************/
+/*Timer interrupt Registers*/
+#define TIMSK					*((volatile uint8*)0x59)			//Timer Interrupt Mask Register
+#define TIMSK_TOIE0				0									//Timer overflow interrupt enable
+#define TIMSK_OCIE0				1									//Output Compare match 0 interrupt enable
+
+#define TIFR					*((volatile uint8*)0x58)			//Timer Interrupt flags Register
+#define TIFR_TOV0				0									//Timer overflow interrupt enable
+#define TIFR_OCF0				1
+
+/*Timer 0 Registers*/
+#define TCCR0					*((volatile uint8*)0x53)			//Timer/Counter 0 Control Register
+#define TCCR0_FOC0				7									//Force Output compare bit
+#define TCCR0_WGM00				6									//Waveform generation Mode bit 0
+#define TCCR0_COM01				5									//Compare match output mode bit 1
+#define TCCR0_COM00				4									//Compare match output mode bit 0
+#define TCCR0_WGM01				3									//Waveform generation Mode bit 1
+#define TCCR0_CS02				2									//Prescaler selection bit 2
+#define TCCR0_CS01				1									//Prescaler selection bit 1
+#define TCCR0_CS00				0									//Prescaler selection bit 0
+
+#define TCNT0					*((volatile uint8*)0x52)			//Timer/Counter 0 Register
+
+#define OCR0					*((volatile uint8*)0x5C)			//Output Compare Match 0 Register
+
+
+/*Timer 1 Registers*/
+#define TCCR1A					*((volatile uint8*)0x4F)
+#define TCCR1A_WGM10			0
+#define TCCR1A_WGM11			1
+#define TCCR1A_COM1A0			6
+#define TCCR1A_COM1A1			7
+
+#define TCCR1B					*((volatile uint8*)0x4E)
+#define TCCR1B_WGM12			3
+#define TCCR1B_WGM13			4
+#define TCCR1B_CS12				2								//Prescaler selection bit 2
+#define TCCR1B_CS11				1								//Prescaler selection bit 1
+#define TCCR1B_CS10				0
+
+#define TCNT1					*((volatile uint16*)0x4C)
+#define ICR1					*((volatile uint16*)0x46)
+#define OCR1A					*((volatile uint16*)0x4A)
+
+/*Timer 2 Registers*/
+#define TCCR2					*((volatile uint8*)0x45)			//Timer/Counter 2 Control Register
+#define TCNT2					*((volatile uint8*)0x44)			//Timer/Counter 2 Register
+#define OCR2					*((volatile uint8*)0x43)			//Output Compare Match 2 Register
+
+/****************  Timer Macros ******************/
+/*Timer Modes Configurations*/
+#define TIMER_MODE_MASK				0xB7					//CLR WGM00:01 bits
+#define NORMAL						0xB7
+#define PWM_PHASE_CORRECT			0x40
+#define CTC							0x08
+#define FAST_PWM					0x48
+
+/*Compare Output Mode*/
+#define COMPARE_OUTPUT_MASK			0xCF			//CLR Compare output bits
+/*Non PWM*/
+#define OC_DISCONNECTED				0
+#define OC_TOGGLE					0x10
+#define OC_CLR						0x20
+#define OC_SET						0x30
+
+/*Fast PWM*/
+#define OC_DISCONNECTED				0
+#define CLR_CM_SET_TOP				0x20
+#define SET_CM_CLR_TOP				0x30
+
+/*Clock selection */
+#define CLK_SELECT_MASK				0xF8			//CLR Clock selection bits
+
+#define NO_CLK_SOURCE				0
+#define NO_PRESCALING				1
+#define PRESCALER_8_BIT				2
+#define PRESCALER_64_BIT			3
+#define PRESCALER_256_BIT			4
+#define PRESCALER_1024_BIT			5
+#define EXT_CLK_FALLING_EDGE		6
+#define EXT_CLK_RISING_EDGE			7
+
 #endif /* ATMEGA32_MEM_MAP_H_ */
