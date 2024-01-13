@@ -15,7 +15,7 @@ void (*EXTI_pvINT2_ISR_Func)(void) = NULL;
 
 
 /*========================================================================================================
- * @Fun			:	EXTI_INTxInit
+ * @Fun			:	MCAL_EXTI_INT0Init
  * @Brief		:	Initialize the EXTI for INTx according to Pre-Build Configurations
  * @RetVal		:	None
  *========================================================================================================*/

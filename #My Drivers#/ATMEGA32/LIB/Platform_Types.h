@@ -48,5 +48,8 @@ typedef double							float64;
 /* CPU Frequency */
 #define F_CPU			8000000UL
 
+/* For Asynchronous functions state */
+#define IDLE					0
+#define BUSY					1
 
 #endif

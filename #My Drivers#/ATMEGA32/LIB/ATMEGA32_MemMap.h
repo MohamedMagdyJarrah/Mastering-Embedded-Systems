@@ -151,9 +151,6 @@
 #define USART_STOPBITS_ONEBIT			0
 #define USART_STOPBITS_TWOBITS			1
 
-#define IDLE					0
-#define BUSY					1
-
 #define SINGLE_CHAR				0
 #define STRING					1
 
@@ -348,4 +345,121 @@
 #define EXT_CLK_FALLING_EDGE		6
 #define EXT_CLK_RISING_EDGE			7
 
+
+/*************************************************************************************************
+										ADC Registers
+**************************************************************************************************/
+#define SFIOR					*((volatile uint8*)0x50)
+#define SFIOR_ADTS2				7
+#define SFIOR_ADTS1				6
+#define SFIOR_ADTS0				5
+
+#define ADCSRA  				*((volatile uint8*)0x26)	//ADC Control and Status register A
+#define ADCSRA_ADPS0			0							//Prescaler bit0
+#define ADCSRA_ADPS1			1							//Prescaler bit1
+#define ADCSRA_ADPS2			2							//Prescaler bit2
+#define ADCSRA_ADIE				3							//ADC Interrupt Enable
+#define ADCSRA_ADIF				4							//ADC Interrupt Flag
+#define ADCSRA_ADATE			5							//Auto Trigger
+#define ADCSRA_ADSC				6							//Start Conversion
+#define ADCSRA_ADEN				7							//ADC Enable
+
+
+#define ADMUX  					*((volatile uint8*)0x27)	//ADC Multiplexer Selection register
+#define ADMUX_MUX0				0							//Multiplexer 0
+#define ADMUX_MUX1				1							//Multiplexer 1
+#define ADMUX_MUX2				2							//Multiplexer 2
+#define ADMUX_MUX3				3							//Multiplexer 3
+#define ADMUX_MUX4				4							//Multiplexer 4
+#define ADMUX_ADLAR				5							//ADC Left Adjust Result
+#define ADMUX_REFS0				6							//Reference Selection bit0
+#define ADMUX_REFS1				7							//Reference Selection bit1
+
+
+#define ADCH  					*((volatile uint8*)0x25)		//ADC High register
+#define ADCL  					*((volatile uint8*)0x24)		//ADC LOW register
+
+#define ADCLH					*((volatile uint16*)0x24)		//Pointer of u16 to point on the next 8 bits also after ADCL and take also ADCH
+
+/****************  ADC Macros ******************/
+/*Input channel and Gain Selection*/
+#define ADC0					0b0000
+#define ADC1                    0b0001
+#define ADC2                    0b0010
+#define ADC3                    0b0011
+#define ADC4                    0b0100
+#define ADC5                    0b0101
+#define ADC6                    0b0110
+#define ADC7                    0b0111
+
+/*Positive Differential input _ Negative Differential input _ Gain*/
+#define ADC0_ADC0_10X			01000
+#define ADC1_ADC0_10X           01001
+#define ADC0_ADC0_200X          01010
+#define ADC1_ADC0_200X          01011
+#define ADC2_ADC2_10X           01100
+#define ADC3_ADC2_10X           01101
+#define ADC2_ADC2_200X          01110
+#define ADC3_ADC2_200X          01111
+#define ADC0_ADC1_1X			10000
+#define ADC1_ADC1_1X            10001
+#define ADC2_ADC1_1X            10010
+#define ADC3_ADC1_1X            10011
+#define ADC4_ADC1_1X            10100
+#define ADC5_ADC1_1X            10101
+#define ADC6_ADC1_1X            10110
+#define ADC7_ADC1_1X            10111
+#define ADC0_ADC2_1X            11000
+#define ADC1_ADC2_1X            11001
+#define ADC2_ADC2_1X            11010
+#define ADC3_ADC2_1X            11011
+#define ADC4_ADC2_1X            11100
+#define ADC5_ADC2_1X            11101
+
+/*For indicator flag used in ISR*/
+#define ASYNCHRONOUS_SINGLE_CONVERSION		1
+#define CHAIN_CONVERSION					2
+
+/*For Setting reference voltage*/
+#define CLR_REFERENCE_SELECTION				0x3F		//To Clear two bits of reference Selection
+#define	AREF								0
+#define	AVCC								0x40
+#define	INT_AREF							0xC0
+
+/*Adjust Result modes*/
+#define RIGHT_ADJUST_RESULT					1
+#define LEFT_ADJUST_RESULT					2
+
+/*Setting Prescaler division Factor*/
+#define ADC_PRESCALER_MASKING				0xF0		//To Clear Prescaler bits
+#define DIV_BY_2							0
+#define DIV_BY_4							2
+#define DIV_BY_8							3
+#define DIV_BY_16							4
+#define DIV_BY_32							5
+#define DIV_BY_64							6
+#define DIV_BY_128							7
+
+/*MUX bits selection*/
+#define CLR_MUX_BITS						0xE0		//To Clear MUX bits in ADMUX Register
+
+/*Choosing Resolution of conversion*/
+#define RESOLUTION_10_BIT					1
+#define RESOLUTION_8_BIT					2
+
+/*For Auto Trigger mode*/
+#define AUTO_TRIGGER_MASK					0x1F
+
+#define AUTO_TRIGGER_MODE					1
+#define SINGLE_CONVERSION_MODE				2
+
+/*Auto Trigger Source Selections*/
+#define FREE_RUNNING_MODE					0
+#define ANALOG_COMPARATOR					0x20
+#define EXTERNAL_INTERRUPT_0				0x40
+#define TIMER_COUNTER0_COMPARE_MATCH		0x60
+#define TIMER_COUNTER0_OVERFLOW				0x80
+#define TIMER_COUNTER_COMPARE_MATCH_B		0xA0
+#define TIMER_COUNTER1_OVERFLOW				0xC0
+#define TIMER_COUNTER1_CAPTURE_EVENT		0xE0
 #endif /* ATMEGA32_MEM_MAP_H_ */
