@@ -9,6 +9,7 @@
 - [Unit 2: C Programming](https://github.com/MohamedMagdyJarrah/Mastering-Embedded-Systrms/tree/main/Unit_2_C_Programming) 
 - [Unit 3: Embedded C](https://github.com/MohamedMagdyJarrah/Mastering-Embedded-Systems/tree/main/Unit_3_Embedded_C)
 - [Unit 4: System Architect](https://github.com/MohamedMagdyJarrah/Mastering-Embedded-Systems/tree/main/Unit_4_System_Architect)
+- [Unit 5: First term Projects](https://github.com/MohamedMagdyJarrah/Mastering-Embedded-Systems/tree/main/Unit_5_First_Term_Projects)
 ### **Seconed Term**
 - [Unit 6: Microcontroller Architecture](https://github.com/MohamedMagdyJarrah/Mastering-Embedded-Systems/tree/main/Unit_6_MCU_Architecture)
 - [Unit 7: MCU Essential Peripherals](https://github.com/MohamedMagdyJarrah/Mastering-Embedded-Systems/tree/main/Unit_7_MCU_Essential_Peripherals)
