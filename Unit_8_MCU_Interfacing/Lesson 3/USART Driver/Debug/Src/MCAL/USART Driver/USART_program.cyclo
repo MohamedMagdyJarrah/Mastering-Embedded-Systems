@@ -1,0 +1,9 @@
+../Src/MCAL/USART Driver/USART_program.c:14:9:USART_INDEX	4
+../Src/MCAL/USART Driver/USART_program.c:39:6:MCAL_USART_Init	11
+../Src/MCAL/USART Driver/USART_program.c:122:6:MCAL_USART_DeInit	4
+../Src/MCAL/USART Driver/USART_program.c:150:6:MCAL_USART_DataTrasmit	4
+../Src/MCAL/USART Driver/USART_program.c:178:6:MCAL_USART_DataReceive	6
+../Src/MCAL/USART Driver/USART_program.c:217:6:MCAL_USART_SetGpioPins	4
+../Src/MCAL/USART Driver/USART_program.c:287:6:USART1_IRQHandler	1
+../Src/MCAL/USART Driver/USART_program.c:292:6:USART2_IRQHandler	1
+../Src/MCAL/USART Driver/USART_program.c:297:6:USART3_IRQHandler	1

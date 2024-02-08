@@ -1,0 +1,12 @@
+../Src/HAL/LCD Driver/LCD_program.c:19:13:wait_ms	3
+../Src/HAL/LCD Driver/LCD_program.c:31:13:LCD_Kick	1
+../Src/HAL/LCD Driver/LCD_program.c:46:6:LCD_Init	2
+../Src/HAL/LCD Driver/LCD_program.c:99:6:LCD_SendCommand	2
+../Src/HAL/LCD Driver/LCD_program.c:152:6:LCD_SendChar	2
+../Src/HAL/LCD Driver/LCD_program.c:203:6:LCD_SendString	5
+../Src/HAL/LCD Driver/LCD_program.c:234:6:LCD_GoToXY	5
+../Src/HAL/LCD Driver/LCD_program.c:262:6:LCD_SendNumber	1
+../Src/HAL/LCD Driver/LCD_program.c:276:6:LCD_SendRealNumber	3
+../Src/HAL/LCD Driver/LCD_program.c:302:6:LCD_ClearDisplay	1
+../Src/HAL/LCD Driver/LCD_program.c:313:6:LCD_SinWaveDisplay	2
+../Src/HAL/LCD Driver/LCD_program.c:336:6:LCD_WriteSpecialCharacter	2

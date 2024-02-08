@@ -1,0 +1,4 @@
+../Src/MCAL/RCC Driver/RCC_program.c:30:10:MCAL_RCC_GetSYSCLK	5
+../Src/MCAL/RCC Driver/RCC_program.c:44:10:MCAL_RCC_GetHCLK	1
+../Src/MCAL/RCC Driver/RCC_program.c:49:10:MCAL_RCC_GetPCLK1	1
+../Src/MCAL/RCC Driver/RCC_program.c:54:10:MCAL_RCC_GetPCLK2	1
