@@ -16,3 +16,4 @@
 - [Unit 7: MCU Essential Peripherals](https://github.com/MohamedMagdyJarrah/Mastering-Embedded-Systems/tree/main/Unit_7_MCU_Essential_Peripherals)
 - [Unit 8: MCU Interfacing](https://github.com/MohamedMagdyJarrah/Mastering-Embedded-Systems/tree/main/Unit_8_MCU_Interfacing)
 - [Unit 9: MCU Timers/ADC](https://github.com/MohamedMagdyJarrah/Mastering-Embedded-Systems/tree/main/Unit_9_Timers_ADC)
+- [Unit 13: CAN Protocol](https://github.com/MohamedMagdyJarrah/Mastering-Embedded-Systems/tree/main/Unit_13_CAN_Protocol)
