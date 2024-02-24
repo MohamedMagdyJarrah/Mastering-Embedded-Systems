@@ -1,0 +1,50 @@
+﻿/*@!Encoding:65001*/
+includes
+{
+  
+}
+
+variables
+{
+  /* Setting the timer and the period of sending acceleration signal */
+  msTimer ACC_Timer;
+  const int ACC_TIMER_PERIOD = 1000;
+  
+  /* Take an instance from ACC message to make operations on it */
+  message Acceleration_Message ACC_CMD;
+  int variable_ACC = 0;
+}
+
+on start
+{
+  write ("========================= Welcome in ECU1 CAPL Script =========================");
+  /* Setting up the timer to go to the callback function every ACC_TIMER_PERIOD */
+  setTimer(ACC_Timer,ACC_TIMER_PERIOD);
+}
+
+on message Speed_Message
+{
+  /* Write message every time we received speed value */
+ write (" Speed received from ECU2 "); 
+}
+
+on timer ACC_Timer
+{
+  /* Toggle the acceleartion to send it */
+  // variable_ACC ^= 1;
+  
+  /* Instead of toggling the state every click on the button, we will take the state of the button in the UI Panel and send it */
+  variable_ACC = @sysvar::ACC_STATE;
+  
+  /* Save the toggled value in the packet of the accelration */  
+  ACC_CMD.ACC_VAL.phys = variable_ACC;
+  /* Send the packet on the bus */
+  output(ACC_CMD);
+  /* Setting the timer again to continue sending the packet every ACC_TIMER_PERIOD */
+  setTimer(ACC_Timer,ACC_TIMER_PERIOD);
+}
+
+
+
+
+

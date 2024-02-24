@@ -1,0 +1,50 @@
+﻿/*@!Encoding:65001*/
+includes
+{
+  
+}
+
+variables
+{ 
+  /* Initiate the message of the speed we will send from ECU2 */
+  message Speed_Message Speed_Messg;
+  int variable_speed = 0;
+}
+
+on start
+{
+  write (" ============================ Welcome to ECU2 ============================ ");
+  
+}
+
+on message Acceleration_Message
+{
+  write (" We received Acceleration command ");
+  
+  /* Check if the accelerator received is one or zero */
+  if (this.ACC_VAL.phys == 1)
+  {
+    /* If the speed was the maximum speed stay on it else the speed will be incremented */
+    if(variable_speed == 255)
+      variable_speed = 255;
+    else
+    {
+      variable_speed += 10;
+      write (" Speed is incrementing: %d ",variable_speed);
+    }
+  }
+  else
+  {
+    /* If the speed was the minimum speed stay on it else the speed will be decremented */
+    if(variable_speed == 0)
+    variable_speed = 0;
+    else
+    {
+      variable_speed -= 10;
+      write (" Speed is decrementing: %d ",variable_speed);
+    }
+  }
+  /* Store the speed variable in the signal in the packet then send it on the bus */
+  Speed_Messg.Speed_VAL.phys = variable_speed;
+  output(Speed_Messg);
+}
