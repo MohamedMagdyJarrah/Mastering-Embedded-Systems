@@ -1,0 +1,10 @@
+../Src/MCAL/GPIO Driver/GPIO_program.c:17:16:GetConfigBit	17
+../Src/MCAL/GPIO Driver/GPIO_program.c:48:6:MCAL_GPIO_SetPinMode	3
+../Src/MCAL/GPIO Driver/GPIO_program.c:76:6:MCAL_GPIO_SetPortMode	2
+../Src/MCAL/GPIO Driver/GPIO_program.c:97:6:MCAL_GPIO_WritePin	2
+../Src/MCAL/GPIO Driver/GPIO_program.c:116:6:MCAL_GPIO_WritePort	1
+../Src/MCAL/GPIO Driver/GPIO_program.c:128:6:MCAL_GPIO_TogglePin	1
+../Src/MCAL/GPIO Driver/GPIO_program.c:140:6:MCAL_GPIO_TogglePort	1
+../Src/MCAL/GPIO Driver/GPIO_program.c:152:9:MCAL_GPIO_ReadPin	1
+../Src/MCAL/GPIO Driver/GPIO_program.c:165:10:MCAL_GPIO_ReadPort	1
+../Src/MCAL/GPIO Driver/GPIO_program.c:179:9:MCAL_GPIO_LockPin	2
